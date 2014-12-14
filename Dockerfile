@@ -17,8 +17,13 @@ RUN git clone \
   ~/.vim/bundle/ropevim
 
 RUN git clone \
+  https://github.com/bling/vim-airline \
+  ~/.vim/bundle/vim-airline
+
+RUN git clone \
   https://github.com/scrooloose/syntastic.git \ 
   ~/.vim/bundle/syntastic
+
 
 COPY .vimrc /root/.vimrc
 
