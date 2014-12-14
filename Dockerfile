@@ -24,6 +24,9 @@ RUN git clone \
   https://github.com/scrooloose/syntastic.git \ 
   ~/.vim/bundle/syntastic
 
+RUN git clone \
+  https://github.com/mhinz/vim-signify \
+  ~/.vim/bundle/vim-signify
 
 COPY .vimrc /root/.vimrc
 
