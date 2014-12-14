@@ -16,6 +16,10 @@ RUN git clone \
   https://github.com/python-rope/ropevim.git \
   ~/.vim/bundle/ropevim
 
+RUN git clone \
+  https://github.com/scrooloose/syntastic.git \ 
+  ~/.vim/bundle/syntastic
+
 COPY .vimrc /root/.vimrc
 
 CMD tmux -2
