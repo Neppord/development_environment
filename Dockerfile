@@ -16,6 +16,7 @@ RUN git clone \
   https://github.com/python-rope/ropevim.git \
   ~/.vim/bundle/ropevim
 
+# Airline and plugins
 RUN git clone \
   https://github.com/bling/vim-airline \
   ~/.vim/bundle/vim-airline
@@ -27,6 +28,8 @@ RUN git clone \
 RUN git clone \
   https://github.com/mhinz/vim-signify \
   ~/.vim/bundle/vim-signify
+
+# End of airline and plugins
 
 COPY .vimrc /root/.vimrc
 
