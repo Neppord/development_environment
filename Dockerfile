@@ -31,6 +31,10 @@ RUN git clone \
 
 # End of airline and plugins
 
+RUN git clone \
+  https://github.com/vim-scripts/Mark--Karkat.git \
+  ~/.vim/bundle/Mark--Karkat
+
 COPY .vimrc /root/.vimrc
 
 CMD tmux -2
