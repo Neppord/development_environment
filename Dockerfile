@@ -43,3 +43,8 @@ COPY .vimrc /root/.vimrc
 WORKDIR /root/code
 
 CMD tmux -2
+
+RUN locale-gen sv_SE.UTF-8  
+ENV LANG sv_SE.UTF-8  
+ENV LANGUAGE sv_SE:sv  
+ENV LC_ALL sv_SE.UTF-8  
