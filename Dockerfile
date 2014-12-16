@@ -40,4 +40,6 @@ RUN git clone \
 
 COPY .vimrc /root/.vimrc
 
+WORKDIR /root/code
+
 CMD tmux -2
