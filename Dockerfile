@@ -42,7 +42,8 @@ COPY .vimrc /root/.vimrc
 
 WORKDIR /root/code
 
-CMD tmux -2
+ENV TERM xterm-256color
+CMD tmux
 
 RUN locale-gen sv_SE.UTF-8  
 ENV LANG sv_SE.UTF-8  
