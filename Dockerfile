@@ -16,6 +16,9 @@ RUN git clone \
   https://github.com/python-rope/ropevim.git \
   ~/.vim/bundle/ropevim
 
+RUN apt-get install -qqy python-pip
+RUN pip install ~/.vim/bundle/ropevim
+
 # Airline and plugins
 RUN git clone \
   https://github.com/bling/vim-airline \
