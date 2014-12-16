@@ -34,9 +34,6 @@ set cpoptions+=$
 
 set path=,.,*/,*/**,./**
 
-
-let g:airline_powerline_fonts=1
-
 "mark configs
 highlight MarkWord1 ctermbg=3 ctermfg=8 cterm=bold
 highlight MarkWord2 ctermbg=13 ctermfg=8 cterm=bold
@@ -62,3 +59,19 @@ set wildmenu
 if !empty($TMUX)
   :autocmd BufWritePost *.py silent ![[ `tmux display-message -p "\#{window_name}\#{window_panes}"` == "TDD2" ]] && tmux send-keys -t :.+ "run-tests" Enter
 endif
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
