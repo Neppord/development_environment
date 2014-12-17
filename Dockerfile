@@ -49,3 +49,5 @@ RUN locale-gen sv_SE.UTF-8
 ENV LANG sv_SE.UTF-8  
 ENV LANGUAGE sv_SE:sv  
 ENV LC_ALL sv_SE.UTF-8  
+
+RUN git config --global push.default simple
