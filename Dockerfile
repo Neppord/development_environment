@@ -28,7 +28,13 @@ RUN git clone \
   ~/.vim/bundle/vim-colors-solarized & \
   git clone \
   git://github.com/digitaltoad/vim-jade.git \
-  ~/.vim/bundle/vim-jade && \
+  ~/.vim/bundle/vim-jade & \
+  git clone \
+  git://github.com/JulesWang/css.vim.git \
+  ~/.vim/bundle/css.vim & \
+  git clone \
+  git://github.com/genoma/vim-less.git \
+  ~/.vim/bundle/vim-less & \
   wait
 
 # Rope
