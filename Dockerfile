@@ -45,7 +45,8 @@ RUN git clone \
   ~/.vim/bundle/syntastic & \
   git clone \
   https://github.com/mhinz/vim-signify \
-  ~/.vim/bundle/vim-signify
+  ~/.vim/bundle/vim-signify && \
+  wait
 
 RUN git clone \
   https://github.com/vim-scripts/Mark--Karkat.git \
