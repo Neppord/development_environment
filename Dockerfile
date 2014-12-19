@@ -1,7 +1,7 @@
 FROM ubuntu:15.04
 
 RUN apt-get update
-RUN apt-get install -qqy curl vim git tmux
+RUN apt-get install -qqy curl wget vim git tmux
 
 COPY .tmux.conf /root/.tmux.conf
 
@@ -51,3 +51,18 @@ ENV LANGUAGE sv_SE:sv
 ENV LC_ALL sv_SE.UTF-8  
 
 RUN git config --global push.default simple
+
+# Install Node.js
+RUN \
+  cd /tmp && \
+  wget http://nodejs.org/dist/node-latest.tar.gz && \
+  tar xvzf node-latest.tar.gz && \
+  rm -f node-latest.tar.gz && \
+  cd node-v* && \
+  ./configure && \
+  CXX="g++ -Wno-unused-local-typedefs" make && \
+  CXX="g++ -Wno-unused-local-typedefs" make install && \
+  cd /tmp && \
+  rm -rf /tmp/node-v* && \
+  npm install -g npm && \
+  echo -e '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bashrc
