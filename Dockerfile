@@ -22,9 +22,13 @@ RUN \
 RUN mkdir -p ~/.vim/autoload ~/.vim/bundle && \
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
+# vim syntax
 RUN git clone \
   git://github.com/altercation/vim-colors-solarized.git \
-  ~/.vim/bundle/vim-colors-solarized.git
+  ~/.vim/bundle/vim-colors-solarized & \
+  git clone \
+  git://github.com/digitaltoad/vim-jade.git \
+  ~/.vim/bundle/vim-jade
 
 # Rope
 RUN git clone \
