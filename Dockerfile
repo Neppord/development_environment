@@ -25,10 +25,11 @@ RUN mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 # vim syntax
 RUN git clone \
   git://github.com/altercation/vim-colors-solarized.git \
-  ~/.vim/bundle/vim-colors-solarized && \
+  ~/.vim/bundle/vim-colors-solarized & \
   git clone \
   git://github.com/digitaltoad/vim-jade.git \
-  ~/.vim/bundle/vim-jade
+  ~/.vim/bundle/vim-jade && \
+  wait
 
 # Rope
 RUN git clone \
