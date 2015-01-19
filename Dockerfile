@@ -74,3 +74,4 @@ ENV LC_ALL sv_SE.UTF-8
 
 RUN git config --global push.default simple
 
+RUN echo "alias npm-exec='PATH=\$(npm bin):\$PATH'" >> ~/.bashrc
