@@ -1,4 +1,4 @@
-FROM ubuntu:15.04
+FROM ubuntu:latest
 
 RUN apt-get update
 RUN apt-get install -qqy curl wget vim git tmux python-pip
@@ -15,8 +15,7 @@ RUN \
   CXX="g++ -Wno-unused-local-typedefs" make install && \
   cd /tmp && \
   rm -rf /tmp/node-v* && \
-  npm install -g npm && \
-  echo -e '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bashrc
+  npm install -g npm
 
 
 RUN mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -66,6 +65,8 @@ WORKDIR /root/code
 
 ENV TERM xterm-256color
 CMD tmux
+
+RUN apt-get install -y locales
 
 RUN locale-gen sv_SE.UTF-8  
 ENV LANG sv_SE.UTF-8  
